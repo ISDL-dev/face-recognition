@@ -14,6 +14,7 @@ services:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - ISDL_SENTINEL_ENDPOINT=${ISDL_SENTINEL_ENDPOINT}
   database:
     image: mysql:8.0
     container_name: ${MYSQL_HOSTNAME}
@@ -31,4 +32,4 @@ services:
       - ./database/my.cnf:/etc/mysql/conf.d/my.cnf
       - ./database/sqls:/docker-entrypoint-initdb.d
     ports:
-      - 3306:3306
+      - 3307:3307
